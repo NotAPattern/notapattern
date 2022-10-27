@@ -1,250 +1,259 @@
-# DEFAULT CONFIG FOR SWAY
+# Default config for sway
 #
-# COPY THIS TO ~/.CONFIG/SWAY/CONFIG AND EDIT IT TO YOUR LIKING.
+# Copy this to ~/.config/sway/config and edit it to your liking.
 #
-# READ `MAN 5 SWAY` FOR A COMPLETE REFERENCE.
+# Read `man 5 sway` for a complete reference.
 
-### VARIABLES
+### Variables
 #
-# LOGO KEY. USE MOD1 FOR ALT.
-SET $MOD MOD4
-# HOME ROW DIRECTION KEYS, LIKE VIM
-SET $LEFT H
-SET $DOWN J
-SET $UP K
-SET $RIGHT L
-# YOUR PREFERRED TERMINAL EMULATOR
-SET $TERM KONSOLE
-# YOUR PREFERRED APPLICATION LAUNCHER
-# NOTE: PASS THE FINAL COMMAND TO SWAYMSG SO THAT THE RESULTING WINDOW CAN BE OPENED
-# ON THE ORIGINAL WORKSPACE THAT THE COMMAND WAS RUN ON.
-SET $MENU DMENU_PATH | DMENU | XARGS SWAYMSG EXEC --
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term konsole
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu wofi --show=drun --lines=7 --prompt=""
 
 ### FONT
-FONT PANGO:FIRA CODE MEDIUM 7
+font pango:Ubuntu Mono 9
 
-### OUTPUT CONFIGURATION
-#
-# DEFAULT WALLPAPER (MORE RESOLUTIONS ARE AVAILABLE IN /USR/SHARE/BACKGROUNDS/SWAY/)
-# OUTPUT * BG /USR/SHARE/BACKGROUNDS/SWAY/SWAY_WALLPAPER_BLUE_1920X1080.PNG FILL
-#
-# EXAMPLE CONFIGURATION:
-#
+### Notification
+exec mako
+
+### Output configuration
 OUTPUT HDMI-A-1 SCALE 1
 #
-# YOU CAN GET THE NAMES OF YOUR OUTPUTS BY RUNNING: SWAYMSG -T GET_OUTPUTS
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### IDLE CONFIGURATION
+### Idle configuration
 #
-# EXAMPLE CONFIGURATION:
+# Example configuration:
 #
-EXEC SWAYIDLE -W \
-          TIMEOUT 300 'SWAYLOCK -F -C 000000' \
-          TIMEOUT 600 'SWAYMSG "OUTPUT * DPMS OFF"' RESUME 'SWAYMSG "OUTPUT * DPMS ON"' \
-          BEFORE-SLEEP 'SWAYLOCK -F -C 000000'
-# THIS WILL LOCK YOUR SCREEN AFTER 300 SECONDS OF INACTIVITY, THEN TURN OFF
-# YOUR DISPLAYS AFTER ANOTHER 300 SECONDS, AND TURN YOUR SCREENS BACK ON WHEN
-# RESUMED. IT WILL ALSO LOCK YOUR SCREEN BEFORE YOUR COMPUTER GOES TO SLEEP.
+exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
 
-### INPUT CONFIGURATION
-#
-# EXAMPLE CONFIGURATION:
-#
-	INPUT TYPE:TOUCHPAD {
-		TAP ENABLED
+input "1739:33361:Synaptics_TM3336-001" {
+    dwt enabled
+    tap enabled
+}
+
+### Input configuration
+input type:keyboard {
+		xkb_layout us,ru
+		xkb_options grp:alt_shift_toggle,grp_led:scroll
 	}
-#{
-#       DWT ENABLED
-#       TAP ENABLED
-#       NATURAL_SCROLL ENABLED
-#       MIDDLE_EMULATION ENABLED
+
+input "1:1:AT_Translated_Set_2_keyboard" xkb_model "PC101"
+
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
 #   }
-	INPUT * {
-		XKB_LAYOUT "US,RU"
-		XKB_OPTIONS "GRP:ALT_SHIFT_TOGGLE,GRP_LED:SCROLL"
-	}
-
-	INPUT 1:1:AT_TRANSLATED_SET_2_KEYBOARD XKB_MODEL "PC101"
 #
-# YOU CAN GET THE NAMES OF YOUR INPUTS BY RUNNING: SWAYMSG -T GET_INPUTS
-# READ `MAN 5 SWAY-INPUT` FOR MORE INFORMATION ABOUT THIS SECTION.
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
 
-### KEY BINDINGS
+### Key bindings
+#
+# Basics:
+
 #
 # SCREENS:
 #
-	BINDSYM $MOD+PRINT EXEC GRIM ~/PICTURES/SCREEN-"$(DATE +%S)".PNG
-	BINDSYM PRINT EXEC GRIM -G "$(SLURP)" ~/PICTURES/SCREEN-"$(DATE +%S)".PNG
+	#BINDSYM $MOD+PRINT EXEC GRIM ~/PICTURES/SCREEN-"$(DATE +%S)".PNG
+	#BINDSYM PRINT EXEC GRIM -G "$(SLURP)" ~/PICTURES/SCREEN-"$(DATE +%S)".PNG
 
 #
 # BRITHNESS:
 #
-	BINDSYM --TO-CODE XF86MONBRIGHTNESSUP EXEC XBACKLIGHT -INC 3
-	BINDSYM --TO-CODE XF86MONBRIGHTNESSDOWN EXEC XBACKLIGHT -DEC 3
+	#bindsym --TO-CODE XF86MONBRIGHTNESSUP exec xbacklight -INC 3
+	bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+	bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+	#BINDSYM --TO-CODE XF86MONBRIGHTNESSDOWN EXEC XBACKLIGHT -DEC 3
 #
 # SOUNDS:
 #
-	BINDSYM --TO-CODE XF86AUDIORAISEVOLUME EXEC --NO-STARTUP-ID PACTL SET-SINK-VOLUME @DEFAULT_SINK@ +2% 
-	BINDSYM --TO-CODE XF86AUDIOLOWERVOLUME EXEC --NO-STARTUP-ID PACTL SET-SINK-VOLUME @DEFAULT_SINK@ -2% 
-	BINDSYM --TO-CODE XF86AUDIOMUTE EXEC --NO-STARTUP-ID PACTL SET-SINK-MUTE @DEFAULT_SINK@ TOGGLE
-	BINDSYM --TO-CODE XF86AUDIOMICMUTE EXEC --NO-STARTUP-ID PACTL SET-SOURCE-MUTE @DEFAULT_SOURCE@ TOGGLE
+	bindsym xf86audioraisevolume exec --no-startup-id amixer set Master 2%+
+	bindsym xf86audiolowervolume exec --no-startup-id amixer set Master 2%-
+	bindsym xf86audiomute exec --no-startup-id amixer set Master toggle
+	bindsym xf86audiomicmute exec --no-startup-id amixer set Master toggle
 
+
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
-# BASICS:
+# Moving around:
 #
-    # START A TERMINAL
-    BINDSYM --TO-CODE $MOD+RETURN EXEC $TERM
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
 
-    # KILL FOCUSED WINDOW
-    BINDSYM --TO-CODE $MOD+SHIFT+Q KILL
-
-    # START YOUR LAUNCHER
-    BINDSYM --TO-CODE $MOD+D EXEC $MENU
-
-    # DRAG FLOATING WINDOWS BY HOLDING DOWN $MOD AND LEFT MOUSE BUTTON.
-    # RESIZE THEM WITH RIGHT MOUSE BUTTON + $MOD.
-    # DESPITE THE NAME, ALSO WORKS FOR NON-FLOATING WINDOWS.
-    # CHANGE NORMAL TO INVERSE TO USE LEFT MOUSE BUTTON FOR RESIZING AND RIGHT
-    # MOUSE BUTTON FOR DRAGGING.
-    FLOATING_MODIFIER $MOD NORMAL
-
-    # RELOAD THE CONFIGURATION FILE
-    BINDSYM --TO-CODE $MOD+SHIFT+C RELOAD
-
-    # EXIT SWAY (LOGS YOU OUT OF YOUR WAYLAND SESSION)
-    BINDSYM --TO-CODE $MOD+SHIFT+E EXEC SWAYNAG -T WARNING -M 'YOU PRESSED THE EXIT SHORTCUT. DO YOU REALLY WANT TO EXIT SWAY? THIS WILL END YOUR WAYLAND SESSION.' -B 'YES, EXIT SWAY' 'SWAYMSG EXIT'
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
 #
-# MOVING AROUND:
+# Workspaces:
 #
-    # MOVE YOUR FOCUS AROUND
-    BINDSYM --TO-CODE $MOD+$LEFT FOCUS LEFT
-    BINDSYM --TO-CODE $MOD+$DOWN FOCUS DOWN
-    BINDSYM --TO-CODE $MOD+$UP FOCUS UP
-    BINDSYM --TO-CODE $MOD+$RIGHT FOCUS RIGHT
-    # OR USE $MOD+[UP|DOWN|LEFT|RIGHT]
-    BINDSYM --TO-CODE $MOD+LEFT FOCUS LEFT
-    BINDSYM --TO-CODE $MOD+DOWN FOCUS DOWN
-    BINDSYM --TO-CODE $MOD+UP FOCUS UP
-    BINDSYM --TO-CODE $MOD+RIGHT FOCUS RIGHT
-
-    # MOVE THE FOCUSED WINDOW WITH THE SAME, BUT ADD SHIFT
-    BINDSYM --TO-CODE $MOD+SHIFT+$LEFT MOVE LEFT
-    BINDSYM --TO-CODE $MOD+SHIFT+$DOWN MOVE DOWN
-    BINDSYM --TO-CODE $MOD+SHIFT+$UP MOVE UP
-    BINDSYM --TO-CODE $MOD+SHIFT+$RIGHT MOVE RIGHT
-    # DITTO, WITH ARROW KEYS
-    BINDSYM --TO-CODE $MOD+SHIFT+LEFT MOVE LEFT
-    BINDSYM --TO-CODE $MOD+SHIFT+DOWN MOVE DOWN
-    BINDSYM --TO-CODE $MOD+SHIFT+UP MOVE UP
-    BINDSYM --TO-CODE $MOD+SHIFT+RIGHT MOVE RIGHT
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
 #
-# WORKSPACES:
+# Layout stuff:
 #
-    # SWITCH TO WORKSPACE
-    BINDSYM --TO-CODE $MOD+1 WORKSPACE NUMBER 1
-    BINDSYM --TO-CODE $MOD+2 WORKSPACE NUMBER 2
-    BINDSYM --TO-CODE $MOD+3 WORKSPACE NUMBER 3
-    BINDSYM --TO-CODE $MOD+4 WORKSPACE NUMBER 4
-    BINDSYM --TO-CODE $MOD+5 WORKSPACE NUMBER 5
-    BINDSYM --TO-CODE $MOD+6 WORKSPACE NUMBER 6
-    BINDSYM --TO-CODE $MOD+7 WORKSPACE NUMBER 7
-    BINDSYM --TO-CODE $MOD+8 WORKSPACE NUMBER 8
-    BINDSYM --TO-CODE $MOD+9 WORKSPACE NUMBER 9
-    BINDSYM --TO-CODE $MOD+0 WORKSPACE NUMBER 10
-    # MOVE FOCUSED CONTAINER TO WORKSPACE
-    BINDSYM --TO-CODE $MOD+SHIFT+1 MOVE CONTAINER TO WORKSPACE NUMBER 1
-    BINDSYM --TO-CODE $MOD+SHIFT+2 MOVE CONTAINER TO WORKSPACE NUMBER 2
-    BINDSYM --TO-CODE $MOD+SHIFT+3 MOVE CONTAINER TO WORKSPACE NUMBER 3
-    BINDSYM --TO-CODE $MOD+SHIFT+4 MOVE CONTAINER TO WORKSPACE NUMBER 4
-    BINDSYM --TO-CODE $MOD+SHIFT+5 MOVE CONTAINER TO WORKSPACE NUMBER 5
-    BINDSYM --TO-CODE $MOD+SHIFT+6 MOVE CONTAINER TO WORKSPACE NUMBER 6
-    BINDSYM --TO-CODE $MOD+SHIFT+7 MOVE CONTAINER TO WORKSPACE NUMBER 7
-    BINDSYM --TO-CODE $MOD+SHIFT+8 MOVE CONTAINER TO WORKSPACE NUMBER 8
-    BINDSYM --TO-CODE $MOD+SHIFT+9 MOVE CONTAINER TO WORKSPACE NUMBER 9
-    BINDSYM --TO-CODE $MOD+SHIFT+0 MOVE CONTAINER TO WORKSPACE NUMBER 10
-    # NOTE: WORKSPACES CAN HAVE ANY NAME YOU WANT, NOT JUST NUMBERS.
-    # WE JUST USE 1-10 AS THE DEFAULT.
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
 #
-# LAYOUT STUFF:
+# Scratchpad:
 #
-    # YOU CAN "SPLIT" THE CURRENT OBJECT OF YOUR FOCUS WITH
-    # $MOD+B OR $MOD+V, FOR HORIZONTAL AND VERTICAL SPLITS
-    # RESPECTIVELY.
-    BINDSYM --TO-CODE $MOD+B SPLITH
-    BINDSYM --TO-CODE $MOD+V SPLITV
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
 
-    # SWITCH THE CURRENT CONTAINER BETWEEN DIFFERENT LAYOUT STYLES
-    BINDSYM --TO-CODE $MOD+S LAYOUT STACKING
-    BINDSYM --TO-CODE $MOD+W LAYOUT TABBED
-    BINDSYM --TO-CODE $MOD+E LAYOUT TOGGLE SPLIT
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
 
-    # MAKE THE CURRENT FOCUS FULLSCREEN
-    BINDSYM --TO-CODE $MOD+F FULLSCREEN
-
-    # TOGGLE THE CURRENT FOCUS BETWEEN TILING AND FLOATING MODE
-    BINDSYM --TO-CODE $MOD+SHIFT+SPACE FLOATING TOGGLE
-
-    # SWAP FOCUS BETWEEN THE TILING AREA AND THE FLOATING AREA
-    BINDSYM --TO-CODE $MOD+SPACE FOCUS MODE_TOGGLE
-
-    # MOVE FOCUS TO THE PARENT CONTAINER
-    BINDSYM --TO-CODE $MOD+A FOCUS PARENT
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
 #
-# SCRATCHPAD:
+# Resizing containers:
 #
-    # SWAY HAS A "SCRATCHPAD", WHICH IS A BAG OF HOLDING FOR WINDOWS.
-    # YOU CAN SEND WINDOWS THERE AND GET THEM BACK LATER.
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 5px
+    bindsym $down resize grow height 5px
+    bindsym $up resize shrink height 5px
+    bindsym $right resize grow width 5px
 
-    # MOVE THE CURRENTLY FOCUSED WINDOW TO THE SCRATCHPAD
-    BINDSYM --TO-CODE $MOD+SHIFT+MINUS MOVE SCRATCHPAD
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 5px
+    bindsym Down resize grow height 5px
+    bindsym Up resize shrink height 5px
+    bindsym Right resize grow width 5px
 
-    # SHOW THE NEXT SCRATCHPAD WINDOW OR HIDE THE FOCUSED SCRATCHPAD WINDOW.
-    # IF THERE ARE MULTIPLE SCRATCHPAD WINDOWS, THIS COMMAND CYCLES THROUGH THEM.
-    BINDSYM --TO-CODE $MOD+MINUS SCRATCHPAD SHOW
-#
-# RESIZING CONTAINERS:
-#
-MODE "RESIZE" {
-    # LEFT WILL SHRINK THE CONTAINERS WIDTH
-    # RIGHT WILL GROW THE CONTAINERS WIDTH
-    # UP WILL SHRINK THE CONTAINERS HEIGHT
-    # DOWN WILL GROW THE CONTAINERS HEIGHT
-    BINDSYM --TO-CODE $LEFT RESIZE SHRINK WIDTH 5PX
-    BINDSYM --TO-CODE $DOWN RESIZE GROW HEIGHT 5PX
-    BINDSYM --TO-CODE $UP RESIZE SHRINK HEIGHT 5PX
-    BINDSYM --TO-CODE $RIGHT RESIZE GROW WIDTH 5PX
-
-    # DITTO, WITH ARROW KEYS
-    BINDSYM --TO-CODE LEFT RESIZE SHRINK WIDTH 5PX
-    BINDSYM --TO-CODE DOWN RESIZE GROW HEIGHT 5PX
-    BINDSYM --TO-CODE UP RESIZE SHRINK HEIGHT 5PX
-    BINDSYM --TO-CODE RIGHT RESIZE GROW WIDTH 5PX
-
-    # RETURN TO DEFAULT MODE
-    BINDSYM --TO-CODE RETURN MODE "DEFAULT"
-    BINDSYM --TO-CODE ESCAPE MODE "DEFAULT"
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
-BINDSYM --TO-CODE $MOD+R MODE "RESIZE"
+bindsym $mod+r mode "resize"
 
 #
-# STATUS BAR:
+# Status Bar:
 #
-# READ `MAN 5 SWAY-BAR` FOR MORE INFORMATION ABOUT THIS SECTION.
-BAR {
-    POSITION BOTTOM
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    position bottom
+    swaybar_command waybar
 
-    # WHEN THE STATUS_COMMAND PRINTS A NEW LINE TO STDOUT, SWAYBAR UPDATES.
-    # THE DEFAULT JUST SHOWS THE CURRENT DATE AND TIME.
-    # STATUS_COMMAND WHILE DATE +'%D-%M-%Y %H:%M:%S %P'; DO SLEEP 5; DONE
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
 
-    #COLORS {
-    #    STATUSLINE #FFFFFF
-    #    BACKGROUND #000000
-    #    INACTIVE_WORKSPACE #32323200 #32323200 #5C5C5C
-    #}
-	FONT FIRA CODE MEDIUM 7
-	STATUS_COMMAND I3STATUS
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
 }
 
-INCLUDE /ETC/SWAY/CONFIG.D/*
-
+include /etc/sway/config.d/*
