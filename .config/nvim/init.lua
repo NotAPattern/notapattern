@@ -1,11 +1,11 @@
 -- Import all configurations
 
 -- Base
-require("base.tabs")
-require("base.other")
-require("base.keymap")
+require("tabs")
+require("keymap")
+require("other")
 -- Theme
-require("theme.theme")
+require("theme")
 
 -- Plugins
-require("plugins.plugins")
+require("plugins")

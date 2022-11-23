@@ -13,7 +13,7 @@ window#waybar {
 }
 
 #workspaces {
-  font-size: 12px;
+  font-size: 11px;
   margin: 0px;
 }
 
@@ -42,8 +42,8 @@ button.focused {
   margin-left: 0;
   padding-left: 0;
   padding-right: 6px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-right: 1px solid #565b66;
   color: #ffb454;
 }
@@ -53,8 +53,8 @@ button.focused {
   padding-right: 6px;
   margin-left: 0;
   padding-left: 0;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   color: #ffb454;
 }
 

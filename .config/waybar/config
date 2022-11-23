@@ -1,7 +1,7 @@
 //output: DP-1
 [{
     "layer": "top",
-    "output": "HDMI-A-1",
+    "output": "DP-1",
     "position": "bottom",
     "height": 1,
     "modules-left": ["sway/workspaces"],
@@ -38,5 +38,6 @@
 },
 {
   "output": "HDMI-A-1",
-  "height": 0,
-  }]
+  "mode": "invisible",
+}
+]

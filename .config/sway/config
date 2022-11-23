@@ -21,12 +21,12 @@ set $term konsole
 set $menu wofi --show=drun --lines=5 --prompt=""
 
 ### Font
-font pango:Fira Code 8
+font pango:Cascadia Code 8
 
 ### Border
-#default_border none
+default_border none
 default_floating_border none
-titlebar_padding 4
+titlebar_padding 2
 titlebar_border_thickness 0
 
 ### Output configuration
@@ -40,7 +40,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output HDMI-A-1 mode 1920x1080 position 0,0 scale 1.0
-#output DP-1 mode 1440x900 position 1920,0 scale 1.0
+output DP-1 mode 1440x900 position 1920,0 scale 1.0
 
 ### Idle configuration
 #
