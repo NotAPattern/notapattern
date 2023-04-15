@@ -1,6 +1,7 @@
 window {
   border: 1px solid #8fd4ff;
   background-color: rgba(44, 62, 80, 0.8);
+  width: 10rem;
   /* background: transparent; */
   /* background: transparent; */
 }

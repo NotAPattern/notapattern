@@ -7,4 +7,4 @@ v.softtabstop = 0
 v.shiftwidth = 2
 v.smarttab = true
 v.expandtab = true
-v.smartindent = true
+v.smartindent = false

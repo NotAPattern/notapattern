@@ -20,6 +20,9 @@ set $term konsole
 # on the original workspace that the command was run on.
 set $menu wofi --show=drun --lines=5 --prompt=""
 
+# Notifications
+exec mako
+
 ### Font
 font pango:Cascadia Code 8
 
@@ -32,7 +35,9 @@ titlebar_border_thickness 0
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output HDMI-A-1 bg /usr/share/backgrounds/sway/quote.jpg center
+output DP-1 bg ~/Pictures/screen2.jpg fit
 #
 # Example configuration:
 #
@@ -56,23 +61,19 @@ output DP-1 mode 1440x900 position 1920,0 scale 1.0
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-	input * {
-		xkb_layout "us,ru"
-		xkb_options "grp:alt_shift_toggle,grp_led:scroll"
-	}
+# Keyboard
+input 1:1:AT_Translated_Set_2_keyboard {
+	xkb_layout "us,ru"
+	xkb_options "grp:toggle,grp_led:scroll"
+  #"grp:alt_shift_toggle,grp_led:scroll"
+}
 
+# Wacom talbet
+# input 1:1:AT_Translated_Set_2_keyboard {
+#  
+# }
 
 ### Key bindings
 #
