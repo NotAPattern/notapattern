@@ -7,3 +7,5 @@ v.swapfile = false
 v.backup = false
 
 v.title = true
+
+v.clipboard = 'unnamedplus'

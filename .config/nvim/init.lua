@@ -7,11 +7,11 @@ require("other")
 -- Theme
 require("theme")
 
--- Plugins
-require("plugins")
+-- Plugins with Packer
+require("packer_config")
 
 -- Plugins settings
-require("_barbar")
+require("_barbar_config")
 require("_nvim-tree")
 require("_coc")
 require("_telescope")
