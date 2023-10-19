@@ -1,6 +1,5 @@
 # About
-  - I have a Bachelor degree at Omsk State University, speciality: "Mathematics and CS".
-  - Now I'm studying for a master's degree at the Omsk State University in math faculty.
+More info in [my site-resume]((https://notapattern.github.io/) "Site-resume") 
 
 
 "Well, that was some experience
