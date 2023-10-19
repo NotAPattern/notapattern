@@ -1,14 +1,6 @@
 # About
   - I have a Bachelor degree at Omsk State University, speciality: "Mathematics and CS".
   - Now I'm studying for a master's degree at the Omsk State University in math faculty.
-  - Love Windows 10 Mobile, like Windows Phone 8(8.1), Spotify. Hate Microsoft (without negative).
-  - I'm currently studying:
-    - Programming languages:
-      - Rust and JS.
-      - In the future study Erlang/Elixir.
-    - Mathematical theory:
-      - Algebra.
-      - Groups theory (as subsection of Algebra).
 
 
 "Well, that was some experience
@@ -18,7 +10,6 @@ nullptr
 
 # My projects
   - [permutation-rust](https://github.com/NotAPattern/permutation-rust "Permutation-rust"). Create and do simple things with combinatorial permutation in `Rust`.
-  - [msg-temrinal](https://github.com/amityKING-team/msg-terminal) 
 
 # I'm in
   - [codeforces](https://codeforces.com/profile/notapattern "Codeforces (sponsored by Telegram)")
@@ -30,6 +21,7 @@ nullptr
   - [mail](mailto:nikita.karatsev@yandex.ru "Yandex mail")
   - [medium](https://www.medium.com/@notapattern "Medium")
   - [telegram](https://www.t.me/NotAPattern "Telegram")
+  - [telegram blog](https://www.t.me/notapatternblog "Telegram blog")
   - [twitch](https://www.twitch.tv/notapattern "Twitch")
   - [spotify](https://open.spotify.com/user/ilz2empiateqi06y9t6nvu3nv "Spotify")  
   - [vk](https://www.vk.com/NotAPattern "VK")
