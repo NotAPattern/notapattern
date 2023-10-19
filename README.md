@@ -1,5 +1,5 @@
 # About
-More info in [my site-resume]((https://notapattern.github.io/) "Site-resume") 
+More info in [my site-resume](https://notapattern.github.io/ "Site-resume") 
 
 
 "Well, that was some experience
