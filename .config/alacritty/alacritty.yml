@@ -1,0 +1,41 @@
+### Font configuration
+font:
+  normal:
+    family: Cascadia Code
+    style: Regular
+
+  bold:
+    family: Cascadia Code
+    style: Bold
+
+  italic:
+    family: Cascadia Code
+    style: Italic
+
+  bold_italic:
+    family: Cascadia Code
+    style: Bold Italic
+
+  size: 11.0
+
+  offset:
+    x: 0
+    y: 1
+
+window:
+  padding:
+    x: 1
+    y: 0
+
+shell:
+  program: /usr/bin/tmux # <- set this to the path of your tmux installation
+  args:
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
+
+
+draw_bold_text_with_bright_colors: true
+
