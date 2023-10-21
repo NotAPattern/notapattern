@@ -12,6 +12,7 @@
         "disable-click": true,
     },
     "tray": {
+        "icon-size": 15,
         "spacing": 5,
     },
     "clock": {
