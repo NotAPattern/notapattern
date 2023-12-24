@@ -8,6 +8,7 @@ And we'll move to another observation point"
 nullptr
 
 # My projects
+  - [toggl-to-google-calendar-sync](https://github.com/NotAPattern/toggl-to-google-calendar-sync "toggl-to-google-calendar-sync"). Simple synchronization from Toggl to Google Calendar. Using Google Script.
   - [permutation-rust](https://github.com/NotAPattern/permutation-rust "Permutation-rust"). Create and do simple things with combinatorial permutation in `Rust`.
 
 # I'm in
