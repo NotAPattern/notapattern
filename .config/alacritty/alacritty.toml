@@ -1,0 +1,33 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+size = 11.0
+
+[font.bold]
+family = "Cascadia Code"
+style = "Bold"
+
+[font.bold_italic]
+family = "Cascadia Code"
+style = "Bold Italic"
+
+[font.italic]
+family = "Cascadia Code"
+style = "Italic"
+
+[font.normal]
+family = "Cascadia Code"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[shell]
+args = ["new-session", "-A", "-D", "-s", "main"]
+program = "/usr/bin/tmux"
+
+[window.padding]
+x = 1
+y = 0

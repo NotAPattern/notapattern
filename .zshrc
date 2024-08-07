@@ -20,6 +20,7 @@ then
   export GTK_USE_PORTAL=0
   export SDL_VIDEODRIVER=wayland
   export MOZ_ENABLE_WAYLAND=1
+  export NO_AT_BRIDGE=1
 fi
 
 
@@ -116,5 +117,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias chrome="google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
-alias codium="vscodium --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias codium="vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
+alias vscode="code-oss --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 # --disable-gpu"
