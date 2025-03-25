@@ -13,7 +13,7 @@ window#waybar {
 }
 
 #workspaces {
-  font-size: 11px;
+  font-size: 9px;
   margin: 0px;
 }
 
@@ -37,20 +37,20 @@ button.focused {
 #memory,
 #network,
 #disk {
-  font-size: 11px;
-  margin-right: 6px;
+  font-size: 9px;
+  margin-right: 4px;
   margin-left: 0;
   padding-left: 0;
-  padding-right: 6px;
+  padding-right: 4px;
   margin-top: 2px;
   margin-bottom: 2px;
   border-right: 1px solid #565b66;
   color: #ffb454;
 }
 #clock {
-  font-size: 11px;
-  margin-right: 6px;
-  padding-right: 6px;
+  font-size: 9px;
+  margin-right: 4px;
+  padding-right: 4px;
   margin-left: 0;
   padding-left: 0;
   margin-top: 2px;

@@ -2,44 +2,71 @@
   "editor.tabSize": 4,
   "window.customMenuBarAltFocus": false,
   "window.titleBarStyle": "custom",
-  "window.menuBarVisibility": "compact",
   "editor.scrollbar.horizontal": "visible",
   "workbench.sideBar.location": "right",
-  "window.zoomLevel": -1.5,
-  "editor.fontFamily": "'Cascadia Code', 'Fira Code'",
-  "editor.fontSize": 17,
   "git.autofetch": true,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.enabled": false,
-  // "editor.formatOnSave": true,
   "git.openRepositoryInParentFolders": "never",
-  // "[javascript]": {
-  //   "editor.defaultFormatter": "vscode.typescript-language-features"
-  // },
-  // "[typescriptreact]": {
-  //   "editor.defaultFormatter": "vscode.typescript-language-features"
-  // },
-  // "[javascriptreact]": {
-  //   "editor.defaultFormatter": "vscode.typescript-language-features"
-  // },
-  // "[scss]": {
-  //   "editor.defaultFormatter": "vscode.css-language-features"
-  // },
-  // "[typescript]": {
-  //   "editor.defaultFormatter": "vscode.typescript-language-features"
-  // },
-  // "typescript.preferences.importModuleSpecifier": "non-relative",
   "window.customTitleBarVisibility": "auto",
-  "workbench.editor.editorActionsLocation": "titleBar",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
+  "workbench.editor.editorActionsLocation": "hidden",
+  // "eslint.validate": [
+  //   "javascript",
+  //   "javascriptreact",
+  //   "typescript",
+  //   "typescriptreact"
+  // ],
+  "eslint.runtime.execArgv": [
+    "--max_old_space_size=4096"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
+  "editor.formatOnSaveTimeout": 20000,
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.colorTheme": "Default Light Modern"
+  // "editor.fontFamily": "UbuntuMono Nerd Font Medium",
+  "editor.fontFamily": "Fira Code Medium",
+  // "editor.fontFamily": "'Cascadia Code'",
+  "editor.fontLigatures": true,
+  "git.enableStatusBarSync": false,
+  "window.menuBarVisibility": "compact",
+  "workbench.layoutControl.enabled": false,
+  "workbench.iconTheme": "ayu",
+  "workbench.editorAssociations": {
+    "*.db": "default"
+  },
+  "editor.fontSize": 16,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "window.zoomLevel": -0.5,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "files.insertFinalNewline": true,
+  "notebook.insertFinalNewline": true,
+  "sshfs.configs": [
+    {
+      "name": "edbee",
+      "label": "edbee",
+      "host": "51.250.4.59",
+      "username": "edbeeroot",
+      "privateKeyPath": "/home/main/.ssh/elecode/elecode.key",
+      "root": "/"
+    }
+  ],
+  "workbench.colorTheme": "Default Light Modern",
+  "security.workspace.trust.untrustedFiles": "open",
 }

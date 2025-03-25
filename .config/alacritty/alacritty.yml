@@ -16,7 +16,7 @@ font:
     family: Cascadia Code
     style: Bold Italic
 
-  size: 11.0
+  size: 9.0
 
   offset:
     x: 0
@@ -28,7 +28,7 @@ window:
     y: 0
 
 shell:
-  program: /usr/bin/tmux # <- set this to the path of your tmux installation
+  program: /usr/bin/tmux
   args:
     - new-session
     - -A

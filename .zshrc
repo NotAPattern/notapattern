@@ -120,3 +120,20 @@ alias chrome="google-chrome-stable --enable-features=UseOzonePlatform --ozone-pl
 alias codium="vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 alias vscode="code-oss --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 # --disable-gpu"
+
+fpath=(~/completion $fpath)
+
+# pnpm
+export PNPM_HOME="/home/main/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun completions
+[ -s "/home/main/.bun/_bun" ] && source "/home/main/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
