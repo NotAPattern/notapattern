@@ -1,5 +1,5 @@
 {
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "window.customMenuBarAltFocus": false,
   "window.titleBarStyle": "custom",
   "editor.scrollbar.horizontal": "visible",
@@ -10,23 +10,13 @@
   "git.openRepositoryInParentFolders": "never",
   "window.customTitleBarVisibility": "auto",
   "workbench.editor.editorActionsLocation": "hidden",
-  // "eslint.validate": [
-  //   "javascript",
-  //   "javascriptreact",
-  //   "typescript",
-  //   "typescriptreact"
-  // ],
-  "eslint.runtime.execArgv": [
-    "--max_old_space_size=4096"
-  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
-  "editor.formatOnSaveTimeout": 20000,
   "diffEditor.ignoreTrimWhitespace": false,
   // "editor.fontFamily": "UbuntuMono Nerd Font Medium",
-  "editor.fontFamily": "Fira Code Medium",
-  // "editor.fontFamily": "'Cascadia Code'",
+  // "editor.fontFamily": "Fira Code Medium",
+  "editor.fontFamily": "'Cascadia Code'",
   "editor.fontLigatures": true,
   "git.enableStatusBarSync": false,
   "window.menuBarVisibility": "compact",
@@ -35,7 +25,7 @@
   "workbench.editorAssociations": {
     "*.db": "default"
   },
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -48,7 +38,7 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "window.zoomLevel": -0.5,
+  "window.zoomLevel": -0.55,
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -57,16 +47,11 @@
   },
   "files.insertFinalNewline": true,
   "notebook.insertFinalNewline": true,
-  "sshfs.configs": [
-    {
-      "name": "edbee",
-      "label": "edbee",
-      "host": "51.250.4.59",
-      "username": "edbeeroot",
-      "privateKeyPath": "/home/main/.ssh/elecode/elecode.key",
-      "root": "/"
-    }
-  ],
-  "workbench.colorTheme": "Default Light Modern",
+  "workbench.colorTheme": "Ayu Mirage Bordered",
   "security.workspace.trust.untrustedFiles": "open",
+  "git.suggestSmartCommit": false,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.replaceTagsWhenPull": true
 }

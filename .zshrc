@@ -119,7 +119,10 @@ source $ZSH/oh-my-zsh.sh
 alias chrome="google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias codium="vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 alias vscode="code-oss --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
+alias idea="sh /usr/share/jetbrains-idea-ce/bin/idea.sh"
+alias obsidian="obsidian --no-sandbox --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations %U"
 # --disable-gpu"
+alias cursor="~/apps/Cursor-1.4.2.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
 
 fpath=(~/completion $fpath)
 
