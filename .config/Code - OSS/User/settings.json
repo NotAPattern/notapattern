@@ -53,5 +53,6 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "git.replaceTagsWhenPull": true
+  "git.replaceTagsWhenPull": true,
+  "lean4.alwaysAskBeforeInstallingLeanVersions": false
 }

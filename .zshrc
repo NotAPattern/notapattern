@@ -122,7 +122,9 @@ alias vscode="code-oss --enable-features=WaylandWindowDecorations --ozone-platfo
 alias idea="sh /usr/share/jetbrains-idea-ce/bin/idea.sh"
 alias obsidian="obsidian --no-sandbox --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations %U"
 # --disable-gpu"
-alias cursor="~/apps/Cursor-1.4.2.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
+alias cursor="cursor --enable-features=UseOzonePlatform --ozone-platform=wayland"
+# --enable-wayland-ime"
+alias lunatask="lunatask --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
 fpath=(~/completion $fpath)
 

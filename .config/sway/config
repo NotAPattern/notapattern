@@ -151,7 +151,5 @@ bar {
   swaybar_command waybar
 }
 
-### Other settings
-xwayland disable
-
 include /etc/sway/config.d/*
+
