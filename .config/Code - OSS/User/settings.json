@@ -10,9 +10,22 @@
   "git.openRepositoryInParentFolders": "never",
   "window.customTitleBarVisibility": "auto",
   "workbench.editor.editorActionsLocation": "hidden",
+  // ESLint
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.useFlatConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
   "diffEditor.ignoreTrimWhitespace": false,
   // "editor.fontFamily": "UbuntuMono Nerd Font Medium",
   // "editor.fontFamily": "Fira Code Medium",
@@ -25,34 +38,22 @@
   "workbench.editorAssociations": {
     "*.db": "default"
   },
-  "editor.fontSize": 14,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
+  "editor.fontSize": 15,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "window.zoomLevel": -0.55,
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
+  "window.zoomLevel": -0.5,
   "files.insertFinalNewline": true,
   "notebook.insertFinalNewline": true,
-  "workbench.colorTheme": "Ayu Mirage Bordered",
   "security.workspace.trust.untrustedFiles": "open",
   "git.suggestSmartCommit": false,
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.replaceTagsWhenPull": true,
-  "lean4.alwaysAskBeforeInstallingLeanVersions": false
+  "lean4.alwaysAskBeforeInstallingLeanVersions": false,
+  "workbench.colorTheme": "Ayu Mirage"
 }

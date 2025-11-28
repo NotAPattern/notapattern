@@ -1,20 +1,13 @@
 * {
-  font-family: "Fira Code";
-  /*"Caskaydia Cove";*/
-  min-height: 0;
+  font-family: "Cascadia Code";
 }
 
 window#waybar {
   background: #131721;
 }
 
-#window {
-  font-family: "Ubuntu Mono";
-}
-
 #workspaces {
-  font-size: 9px;
-  margin: 0px;
+  font-size: 11px;
 }
 
 button {
@@ -22,8 +15,8 @@ button {
   border: none;
   background: transparent;
   box-shadow: none;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-radius: 0;
 }
 button.focused {
@@ -31,30 +24,26 @@ button.focused {
 }
 
 #tray,
-#temperature,
+#wireplumber,
 #battery,
 #cpu,
 #memory,
 #network,
 #disk {
-  font-size: 9px;
-  margin-right: 4px;
+  font-size: 12px;
+  margin-right: 5px;
   margin-left: 0;
   padding-left: 0;
-  padding-right: 4px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  padding-right: 5px;
   border-right: 1px solid #565b66;
   color: #ffb454;
 }
 #clock {
-  font-size: 9px;
-  margin-right: 4px;
-  padding-right: 4px;
+  font-size: 11px;
+  margin-right: 5px;
+  padding-right: 5px;
   margin-left: 0;
   padding-left: 0;
-  margin-top: 2px;
-  margin-bottom: 2px;
   color: #ffb454;
 }
 

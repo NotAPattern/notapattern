@@ -1,23 +1,34 @@
-//output: DP-1
 [{
     "layer": "top",
     "output": "HDMI-A-1",
     "position": "bottom",
-    "height": 1,
+    "height": 30,
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
-    "modules-right": ["tray", "cpu", "temperature", "memory", "disk", "network", "clock"],
+    "modules-right": [
+        "tray", 
+        "wireplumber",
+        "cpu",
+        "memory",
+        "disk",
+        "network",
+        "clock"
+    ],
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-click": true,
     },
     "tray": {
-        "icon-size": 12,
-        "spacing": 5,
+        "icon-size": 14,
+        "spacing": 6,
     },
-    "clock": {
-        "format": "{:%d(%a).%m.%Y (%j day, %V week) %R}",
-        "timezone": "Asia/Omsk"
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": " 0%",
+        "format-icons": ["", "", ""],
+        "scroll-step": 5,
+        "on-click": "~/.config/waybar/toggle-pwvu.sh",
+        "tooltip": true
     },
     "cpu": {
         "format": "cpu {usage}%"
@@ -28,18 +39,14 @@
     "disk": {
         "format": "{path} {used}/{total}"
       },
-    "temperature": {
-        "critical-threshold": 75,
-        "format": "t {temperatureC}°C"
-    },
     "network": {
         "interface": "enp34s0",
         "format": "{ifname} {ipaddr}",
         "format-disconnected": "⚠ Disconnected"
     },
-}
-//{
-//  "output": "DP-1",
-//  "mode": "invisible",
-//}
-]
+    "clock": {
+        "format": "{:%d.%m.%Y (%a)\n(%j day, %V week) %R}",
+        "timezone": "Asia/Omsk"
+    },
+}]
+

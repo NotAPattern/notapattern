@@ -1,4 +1,0 @@
-{
-  "Lua.telemetry.enable": true,
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "markdown"]
-}

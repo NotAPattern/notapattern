@@ -1,8 +1,13 @@
+[general]
+import = [
+  "~/.config/alacritty/themes/themes/ayu_dark.toml"
+]
+
 [colors]
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 10
+size = 11
 
 [font.bold]
 family = "Cascadia Code"
