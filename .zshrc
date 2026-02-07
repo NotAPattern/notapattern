@@ -87,6 +87,7 @@ plugins=(
   yarn
   zsh-syntax-highlighting
   zsh-autosuggestions
+  npm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,7 +117,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias chrome="google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias chrome="google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=basic"
 alias codium="vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 alias vscode="code-oss --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 alias idea="sh /usr/share/jetbrains-idea-ce/bin/idea.sh"
